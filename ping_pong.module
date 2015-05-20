@@ -40,7 +40,7 @@ function ping_pong_form_submit($form, &$form_state) {
 
     for ($i=1; $i <= $count_max; $i++) {
         if ($i % 3 == 0 && $i % 5 == 0) {
-            array_push($pingpong_output, "ping-poing");
+            array_push($pingpong_output, "ping-pong");
         } else if ($i % 3 == 0) {
             array_push($pingpong_output, "ping");
         } else if ($i % 5 == 0) {
@@ -57,9 +57,9 @@ function ping_pong_form_submit($form, &$form_state) {
 function ping_pong_done() {
     $output = '<ul>';
     foreach ($_SESSION['ping_pong_output'] as $value) {
-        $output = $output . '<li>' . $value . '<ul>';
+        $output = $output . '<li>' . $value . '</li>';
     }
 
-    $output = $output . '<ul>';
+    $output = $output . '</ul>';
     return "Hooray! $output";
 }
